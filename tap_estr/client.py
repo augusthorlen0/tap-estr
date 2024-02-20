@@ -15,18 +15,13 @@ if sys.version_info >= (3, 9):
 else:
     import importlib_resources
 
-_Auth = Callable[[requests.PreparedRequest], requests.PreparedRequest]
-
-# TODO: Delete this is if not using json files for schema definition
-SCHEMAS_DIR = importlib_resources.files(__package__) / "schemas"
-
 
 class TapEstrStream(RESTStream):
     """TapEstr stream class."""
 
     @property
     def url_base(self) -> str:
-        """Return the API URL root, configurable via tap settings."""
+        """Return the API URL root"""
         return "https://api.estr.dev"
 
     records_jsonpath = "$[*]"
