@@ -19,6 +19,7 @@ class TapEstr(Tap):
         """
         return [
             streams.EstrLatest(self),
+            streams.EstrHistorical(self),
         ]
 
 
