@@ -19,7 +19,7 @@ class EstrLatest(TapEstrStream):
     """To fetch the latest €STR"""
 
     name = "latest"
-    path = "/latest"
+    path = "/historical"
     primary_keys: t.ClassVar[list[str]] = ["date"]
     schema = th.PropertiesList(
         th.Property("date", th.StringType),
